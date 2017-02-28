@@ -23,7 +23,7 @@ func TestEmptyStackPeep(t *testing.T) {
 		t.Error("Expected peep of empty stack to return an empty interface{}")
 	}
 
-	if ok != false {
+	if ok {
 		t.Error("Expected peep of empty stack to indicate that the operation had failed")
 	}
 }
@@ -38,7 +38,7 @@ func TestEmptyStackPop(t *testing.T) {
 		t.Error("Expected pop of empty stack to return an empty interface{}")
 	}
 
-	if ok != false {
+	if ok {
 		t.Error("Expected pop of empty stack to indicate that the operation had failed")
 	}
 }
@@ -68,7 +68,7 @@ func TestStackPushAndPeep(t *testing.T) {
 			t.Error("Peep does not match the last item pushed onto the stack")
 		}
 
-		if ok != true {
+		if !ok {
 			t.Error("Expected peep of non empty stack to indicate that the operation had succeeded")
 		}
 	}
@@ -89,7 +89,7 @@ func TestStackPushAndPop(t *testing.T) {
 			t.Errorf("Expected to pop value %v but saw value %v", i, v)
 		}
 
-		if ok != true {
+		if !ok {
 			t.Error("Expected pop of non empty stack to indicate that the operation had succeeded")
 		}
 	}
